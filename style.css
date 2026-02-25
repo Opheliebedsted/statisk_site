@@ -203,6 +203,7 @@ header {
 }
 nav a {
   text-decoration: none;
+  color: black;
 }
 
 @media screen and (min-width: 800px) {
