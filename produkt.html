@@ -1,24 +1,68 @@
 <!doctype html>
 <html lang="da">
   <head>
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FASHN</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="headernav">
+        <a href="index.html">
+          <img
+            src="logo.svg"
+            alt="Logo"
+            width="200"
+            height="100"
+            class="logo"
+          />
+        </a>
         <a class="navknap" href="">Categories</a>
         <a class="navknap" href="">Brands</a>
         <a class="navknap" href="">Seasons</a>
       </nav>
     </header>
     <main>
-      <section class="kategorier-grid">
-        <h1>Kategorier</h1>
-        <a href="productlist.html"></a>
+      <section class="produkt-grid">
+        <div>
+          <img src="produktbillede3.webp" alt="Cricket Jersey" />
+        </div>
+        <article class="product-info">
+          <h2>Product information</h2>
+          <h3>Model Name</h3>
+          <p>Sahara Team Indida Blue Jersey</p>
+          <h3>Color</h3>
+          <p>Blue</p>
+          <h3>Inventory Number</h3>
+          <p>1163</p>
+          <h2>Nike</h2>
+          <p>Nike, creating experiences for today's athlete</p>
+        </article>
+        <article class="bg-product-info">
+          <h2>Sahara Team India Blue Jersey</h2>
+          <p>Thsirts/Nike</p>
+          <div class="form-container">
+            <label for="stoerrelse">Sizes from XS-XL</label>
+            <select id="stoerrelse" name="stoerrelse" required>
+              <option value="" disabled selected>Choose size</option>
+              <option value="x-small">XS</option>
+              <option value="small">S</option>
+              <option value="medium">M</option>
+              <option value="large">L</option>
+              <option value="x-large">XL</option>
+            </select>
+          </div>
+          <button>Add to basket</button>
+        </article>
       </section>
     </main>
-    <footer>Her er min footer</footer>
+    <footer>
+      <nav class="footernav">
+        <a class="navknap" href="">Categories</a>
+        <a class="navknap" href="">Brands</a>
+        <a class="navknap" href="">Seasons</a>
+      </nav>
+    </footer>
   </body>
 </html>
