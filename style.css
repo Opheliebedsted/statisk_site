@@ -1,32 +1,118 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
 img {
   display: block;
 }
 
+/* PRODUKT SIDE */
 .produkt-grid {
   display: grid;
   grid-template-columns: 1fr;
 }
 
+.produkt-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-info {
+  padding-bottom: 2rem;
+}
+
+.bg-product-info {
+  background-color: rgb(185, 181, 181);
+}
+
 @media screen and (min-width: 800px) {
+  .bg-product-info h2 {
+    color: white;
+  }
+
   .produkt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 3rem;
+  }
+
+  .product-info h2,
+  .bg-product-info h2 {
+    padding-left: 0;
+    padding-top: 0;
+  }
+}
+/* FORSIDE */
+.produktlist-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.produktlist-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: solid rgb(169, 164, 164) 0.5px;
+}
+.produktlist-grid a {
+  text-decoration: none;
+  color: black;
+}
+
+/*  */
+.bgsale {
+  background-color: rgb(217, 36, 36);
+  color: white;
+  max-width: 45px;
+}
+.soldout {
+  position: relative;
+  width: 100%;
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.8);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.nosale,
+.nobgsale,
+.sold-out-badge-invisible {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .subtitle {
+    color: rgb(128, 127, 127);
+  }
+
+  .produktlist-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
     margin: 7rem;
   }
-  .produkt-grid img {
+  .produktlist-grid img {
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
+
   .produkt-pic {
-    display: subgrid;
-    grid-template-rows: span 3;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 5 span;
   }
 }
 
@@ -37,7 +123,7 @@ img {
   margin: 1rem;
 }
 .kat {
-  background-color: rgb(243, 230, 234);
+  background-color: rgb(243, 237, 230);
   text-decoration: none;
   color: black;
   padding: 1.5rem;
@@ -46,7 +132,7 @@ img {
 }
 
 .kat:hover {
-  background-color: rgb(242, 206, 228);
+  background-color: rgb(242, 237, 206);
   transform: translateY(-5px); /* løfter kortet */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition:
@@ -63,7 +149,7 @@ img {
   }
 
   .kat {
-    background-color: rgb(243, 230, 234);
+    background-color: rgb(243, 237, 230);
     text-decoration: none;
     color: black;
     padding: 3rem;
@@ -71,23 +157,46 @@ img {
     text-align: center;
   }
   .kat:hover {
-    background-color: rgb(242, 206, 228);
+    background-color: rgb(242, 237, 206);
     transform: translateY(-5px); /* løfter kortet */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
   }
+
+  h2 {
+    font-size: 3rem;
+    padding-left: 2rem;
+    padding-top: 5rem;
+  }
 }
+
+/* FOOTER */
+
+.footernav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* NAVIGATION */
 
 header {
   width: 100%;
-  background-color: rgb(240, 236, 238);
 }
-nav {
-  display: flex;
-}
-
 nav a {
   text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  .logo {
+    padding-left: 2rem;
+  }
+  .headernav {
+    background-color: rgb(250, 250, 249);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
