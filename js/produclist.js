@@ -14,20 +14,21 @@ function showData(products) {
   products.forEach((product) => {
     console.log(product);
     markup += `<a href="produkt.html">
-          <article class="produkt-pic">
+          <article class="produkt-pic ${product.soldout && "soldout"} ${product.discount && "sale"}">
             <div class="soldout">
               <img
-                src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp"
+               class="product-image"
+                src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                 alt=""
-                class="product-image"
+               
               />
-              <div class="sold-out-badge">Sold out</div>
+              ${product.soldout ? `<div class="sold-out-badge">Sold out</div>` : ""}
             </div>
-            <h3 class="produkt-title">Grey Puma T-shirt</h3>
-            <p class="subtitle">Tshirt/Puma</p>
-            <p class="price">DDK 895,-</p>
-            <p class="sale">Nu DDK 716,-</p>
-            <div class="bgsale">-20%</div>
+            <h3>${product.productdisplayname}</h3>
+            <p class="subtitle">${product.articletype} | ${product.brandname}</p>
+            <p class="price">DDK ${product.price},-</p>
+            ${product.discount ? `<p class="sale">Nu DDK ${Math.round(product.price - (product.price * product.discount) / 100)},-</p>` : ""}
+            ${product.discount ? `<p class="bgsale">${product.discount}%</p>` : ""}
           </article>
         </a>`;
   });

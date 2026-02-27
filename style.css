@@ -83,12 +83,17 @@ img {
 .bgsale {
   background-color: rgb(217, 36, 36);
   color: white;
-  max-width: 45px;
+  width: fit-content;
 }
 .soldout {
   position: relative;
   width: 100%;
 }
+
+/* .product-image.soldout img {
+  opacity: 0.5;
+  filter: grayscale(50%);
+} */
 
 .sold-out-badge {
   position: absolute;
