@@ -3,6 +3,8 @@ const container = document.querySelector(".produktlist-grid");
 const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
 document.querySelector("h2").textContent = category;
 
+console.log("hej");
+
 function getData() {
   fetch(endpoint)
     .then((res) => res.json())

@@ -18,21 +18,3 @@ function showData(data) {
   container.innerHTML = markup;
 }
 getData();
-
-// fetch(`https://kea-alt-del.dk/t7/api/categories`)
-//   .then((response) => response.json())
-//   .then((categories) => {
-//     console.log(categories);
-//     let markup = "";
-//     categories.forEach(
-//       (elm) =>
-//         (markup += `<a href="productlist.html?category=${elm.category}">${elm.category}</a>`),
-//     );
-//     document.querySelector(".kat").innerHTML = markup;
-//   });
-
-//PRODUCTLIST
-// function showData(data){
-//     let markup => "";
-//     data.forEach ((element))
-// }
