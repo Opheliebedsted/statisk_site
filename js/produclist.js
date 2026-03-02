@@ -15,7 +15,7 @@ function showData(products) {
   let markup = "";
   products.forEach((product) => {
     console.log(product);
-    markup += `<a href="produkt.html">
+    markup += `<a href="produkt.html?id=${product.id}"> 
           <article class="produkt-pic ${product.soldout && "soldout"} ${product.discount && "sale"}">
             <div class="soldout">
               <img

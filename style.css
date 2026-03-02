@@ -13,14 +13,15 @@ img {
 
 /* PRODUKT SIDE */
 .back-button {
-  background-color: rgb(200, 208, 211);
+  /* background-color: rgb(200, 208, 211); */
   text-decoration: none;
-  color: black;
-  border-radius: 15px;
+  color: rgb(0, 0, 0);
   text-align: center;
+  font-weight: 700;
 }
 
 .produkt-grid {
+  margin: 2rem;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -55,7 +56,7 @@ img {
     padding-top: 0;
   }
   .back-button {
-    background-color: rgb(200, 208, 211);
+    /* background-color: rgb(200, 208, 211); */
     text-decoration: none;
     color: black;
     padding: 1rem;
@@ -66,7 +67,9 @@ img {
 /* FORSIDE */
 .produktlist-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem;
 }
 .produktlist-grid img {
   width: 100%;
