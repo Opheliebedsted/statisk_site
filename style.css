@@ -83,18 +83,22 @@ img {
 }
 
 /* PRODUKTLISTE */
-#filter-buttons {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  padding-top: 2rem;
-  padding-left: 2rem;
-}
 
 .filterbutton {
-  background-color: rgb(208, 224, 239);
+  border-radius: 10px;
+  background-color: rgb(243, 237, 230);
   border: none;
   padding: 1rem;
+}
+
+.filterbutton:hover {
+  cursor: pointer;
+  background-color: rgb(242, 237, 206);
+  transform: translateY(-5px); /* løfter kortet */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .bgsale {
@@ -131,6 +135,13 @@ img {
 }
 
 @media screen and (min-width: 800px) {
+  #filter-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+  }
   .subtitle {
     color: rgb(128, 127, 127);
   }
