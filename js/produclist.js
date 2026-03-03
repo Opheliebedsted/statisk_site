@@ -37,3 +37,30 @@ function showData(products) {
   container.innerHTML = markup;
 }
 getData();
+
+//filter knapper
+
+let allData;
+
+document
+  .querySelectorAll("button")
+  .forEach((knap) => knap.addEventListener("click", filter));
+
+function getData() {
+  fetch(endpoint)
+    .then((response) => response.json())
+    .then((data) => {
+      allData = data;
+      showData(allData);
+    });
+}
+
+function filter(e) {
+  const valgt = e.target.textContent;
+  if (valgt === "All") {
+    showData(allData);
+  } else {
+    const udsnit = allData.filter((element) => element.gender == valgt);
+    showData(udsnit);
+  }
+}

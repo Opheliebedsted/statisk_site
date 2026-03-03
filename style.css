@@ -82,7 +82,21 @@ img {
   color: black;
 }
 
-/*  */
+/* PRODUKTLISTE */
+#filter-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.filterbutton {
+  background-color: rgb(208, 224, 239);
+  border: none;
+  padding: 1rem;
+}
+
 .bgsale {
   background-color: rgb(217, 36, 36);
   color: white;
