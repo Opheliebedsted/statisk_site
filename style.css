@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 img {
   display: block;
@@ -13,7 +13,6 @@ img {
 
 /* PRODUKT SIDE */
 .back-button {
-  /* background-color: rgb(200, 208, 211); */
   text-decoration: none;
   color: rgb(0, 0, 0);
   text-align: center;
@@ -65,6 +64,12 @@ img {
   }
 }
 /* FORSIDE */
+
+.categoriesh2 {
+  margin: 3rem;
+  text-align: center;
+}
+
 .produktlist-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -80,6 +85,14 @@ img {
 .produktlist-grid a {
   text-decoration: none;
   color: black;
+}
+
+@media screen and (min-width: 800px) {
+  .categoriesh2 {
+    margin: 0;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
 }
 
 /* PRODUKTLISTE */
@@ -110,11 +123,6 @@ img {
   position: relative;
   width: 100%;
 }
-
-/* .product-image.soldout img {
-  opacity: 0.5;
-  filter: grayscale(50%);
-} */
 
 .sold-out-badge {
   position: absolute;
@@ -231,22 +239,86 @@ img {
 
 /* NAVIGATION */
 
-header {
-  width: 100%;
-}
-nav a {
-  text-decoration: none;
-  color: black;
+/* HERO skjult på mobil */
+.hero-header img {
+  display: none;
 }
 
-@media screen and (min-width: 800px) {
-  .logo {
-    padding-left: 2rem;
-  }
+/* HEADER */
+header {
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: rgb(250, 250, 249);
+}
+
+/* NAV CONTAINER */
+.headernav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* LINKS */
+.headernav a {
+  padding-top: 1.5rem;
+  text-decoration: none;
+  color: #222;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navknap {
+  margin-left: 1.5rem;
+}
+
+/* Hover animation */
+.navknap::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: #222;
+  transition: width 0.3s ease;
+}
+
+.navknap:hover::after {
+  width: 100%;
+}
+
+/* Mobil nav */
+@media screen and (max-width: 799px) {
   .headernav {
-    background-color: rgb(250, 250, 249);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navknap {
+    margin-left: 0;
+  }
+}
+
+/* DESKTOP (800px og op) */
+@media screen and (min-width: 800px) {
+  .hero-header img {
+    display: block;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: center;
   }
 }

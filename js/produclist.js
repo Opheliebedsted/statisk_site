@@ -1,6 +1,6 @@
 const category = new URLSearchParams(window.location.search).get("category");
 const container = document.querySelector(".produktlist-grid");
-const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=60`;
 document.querySelector("h2").textContent = category;
 
 console.log("hej");
