@@ -10,7 +10,9 @@ html {
 img {
   display: block;
 }
-
+body {
+  background-color: #fcfaf4;
+}
 /* PRODUKT SIDE */
 .back-button {
   text-decoration: none;
@@ -34,11 +36,26 @@ img {
   padding-bottom: 2rem;
 }
 
+.product-info h3 {
+  padding-top: 1rem;
+}
+
+.product-info h2,
+h3,
+p {
+  padding-bottom: 1rem;
+}
+
 .bg-product-info {
   background-color: rgb(185, 181, 181);
 }
 
 @media screen and (min-width: 800px) {
+  .product-info h2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0;
+  }
   .bg-product-info h2 {
     color: white;
   }
@@ -49,10 +66,15 @@ img {
     padding-top: 3rem;
   }
 
-  .product-info h2,
+  .product-info p {
+    padding-bottom: 0.5rem;
+  }
+  .product-info h3 {
+    padding-top: 1.5rem;
+  }
+
   .bg-product-info h2 {
     padding-left: 0;
-    padding-top: 0;
   }
   .back-button {
     /* background-color: rgb(200, 208, 211); */
@@ -63,8 +85,8 @@ img {
     text-align: center;
   }
 }
-/* FORSIDE */
 
+/* PRODUKTLISTE */
 .categoriesh2 {
   margin: 3rem;
   text-align: center;
@@ -95,7 +117,14 @@ img {
   }
 }
 
-/* PRODUKTLISTE */
+.produclist-h2,
+.filter-buttons,
+.sorter-buttons {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  text-align: center;
+}
 
 .filterbutton {
   border-radius: 10px;
@@ -118,6 +147,7 @@ img {
   background-color: rgb(217, 36, 36);
   color: white;
   width: fit-content;
+  height: 20px;
 }
 .soldout {
   position: relative;
@@ -143,12 +173,18 @@ img {
 }
 
 @media screen and (min-width: 800px) {
-  #filter-buttons {
+  .filter-buttons,
+  .sorter-buttons {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     padding-top: 2rem;
-    padding-left: 2rem;
+    padding-left: 10rem;
+  }
+
+  .produclist-h2 {
+    padding-top: 5rem;
+    text-align: left;
   }
   .subtitle {
     color: rgb(128, 127, 127);
@@ -158,7 +194,7 @@ img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4rem;
-    margin: 7rem;
+    margin: 10rem;
   }
   .produktlist-grid img {
     object-fit: cover;
@@ -171,7 +207,17 @@ img {
     grid-template-rows: subgrid;
     grid-row: 5 span;
   }
+  .produclist-h2 {
+    padding-left: 10rem;
+  }
+
+  .filter-buttons,
+  .sorter-buttons {
+    padding-left: 10rem;
+  }
 }
+
+/* FORSIDE */
 
 .kategorier-grid {
   display: grid;
@@ -202,14 +248,14 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
-    margin: 2rem;
+    margin: 6rem;
   }
 
   .kat {
     background-color: rgb(243, 237, 230);
     text-decoration: none;
     color: black;
-    padding: 3rem;
+    padding: 6rem;
     border-radius: 15px;
     text-align: center;
   }
@@ -317,7 +363,7 @@ header {
   .hero-header img {
     display: block;
     width: 100%;
-    height: 60vh;
+    height: 75vh;
     object-fit: cover;
     object-position: center;
   }

@@ -1,14 +1,62 @@
 const category = new URLSearchParams(window.location.search).get("category");
-const container = document.querySelector(".produktlist-grid");
-const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=60`;
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=100`;
 document.querySelector("h2").textContent = category;
 
-console.log("hej");
+const container = document.querySelector(".produktlist-grid");
+
+let allData;
+let currentData;
+
+document
+  .querySelectorAll("#filter button")
+  .forEach((knap) => knap.addEventListener("click", filter));
+
+document
+  .querySelectorAll("#sorter button")
+  .forEach((knap) => knap.addEventListener("click", sorter));
 
 function getData() {
   fetch(endpoint)
-    .then((res) => res.json())
-    .then(showData);
+    .then((response) => response.json())
+    .then((data) => {
+      allData = data;
+      currentData = data; // 👈 vigtig
+      showData(currentData);
+    });
+}
+
+function filter(e) {
+  const valgt = e.target.textContent;
+  if (valgt === "All") {
+    currentData = allData;
+    showData(currentData);
+  } else {
+    currentData = allData.filter((element) => element.gender == valgt);
+    showData(currentData);
+  }
+}
+
+function sorter(event) {
+  if (event.target.dataset.price) {
+    const dir = event.target.dataset.price;
+    if (dir == "acc") {
+      currentData.sort((a, b) => a.price - b.price);
+    } else {
+      currentData.sort((a, b) => b.price - a.price);
+    }
+  } else {
+    const dir = event.target.dataset.text;
+    if (dir == "az") {
+      currentData.sort((a, b) =>
+        a.productdisplayname.localeCompare(b.productdisplayname, "da"),
+      );
+    } else {
+      currentData.sort((a, b) =>
+        b.productdisplayname.localeCompare(a.productdisplayname, "da"),
+      );
+    }
+  }
+  showData(currentData);
 }
 
 function showData(products) {
@@ -37,30 +85,3 @@ function showData(products) {
   container.innerHTML = markup;
 }
 getData();
-
-//filter knapper
-
-let allData;
-
-document
-  .querySelectorAll("button")
-  .forEach((knap) => knap.addEventListener("click", filter));
-
-function getData() {
-  fetch(endpoint)
-    .then((response) => response.json())
-    .then((data) => {
-      allData = data;
-      showData(allData);
-    });
-}
-
-function filter(e) {
-  const valgt = e.target.textContent;
-  if (valgt === "All") {
-    showData(allData);
-  } else {
-    const udsnit = allData.filter((element) => element.gender == valgt);
-    showData(udsnit);
-  }
-}
