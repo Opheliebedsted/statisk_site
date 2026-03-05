@@ -20,7 +20,7 @@ function getData() {
     .then((response) => response.json())
     .then((data) => {
       allData = data;
-      currentData = data; // 👈 vigtig
+      currentData = data;
       showData(currentData);
     });
 }
