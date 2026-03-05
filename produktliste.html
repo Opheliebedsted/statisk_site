@@ -25,14 +25,19 @@
       </nav>
     </header>
     <main>
-      <h2 class="produclist-h2">Apparel</h2>
-      <section id="filter-buttons">
+      <h2 class="produclist-h2"></h2>
+      <div class="filter-buttons" id="filter">
         <button class="filterbutton">All</button>
         <button class="filterbutton">Unisex</button>
         <button class="filterbutton">Women</button>
         <button class="filterbutton">Men</button>
-      </section>
-
+      </div>
+      <div class="sorter-buttons" id="sorter">
+        <button class="filterbutton" data-price="acc">Pris: Lav-Høj</button>
+        <button class="filterbutton" data-price="dec">Pris: Høj-lav</button>
+        <button class="filterbutton" data-text="az">A-Z</button>
+        <button class="filterbutton" data-text="za">Z-A</button>
+      </div>
       <section class="produktlist-grid"></section>
     </main>
     <footer>
