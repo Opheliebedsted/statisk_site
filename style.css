@@ -65,6 +65,9 @@ p {
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 3rem;
   }
+  .product-info {
+    padding-left: 2rem;
+  }
 
   .product-info p {
     padding-bottom: 0.5rem;
